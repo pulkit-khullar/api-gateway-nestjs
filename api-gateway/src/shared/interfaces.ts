@@ -1,4 +1,4 @@
-export interface RouteMapping{
-    routeName: string,
-    routePath: string
+export interface RouteMapping {
+  routeName: string;
+  routePath: string;
 }

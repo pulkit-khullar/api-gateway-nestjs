@@ -6,8 +6,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(@Headers('x-api-gateway') apiGatewayHeader: string ): string {
-    console.log(apiGatewayHeader)
+  getHello(@Headers('x-api-gateway') apiGatewayHeader: string): string {
+    console.log(apiGatewayHeader);
     return this.appService.getHello();
   }
 }
