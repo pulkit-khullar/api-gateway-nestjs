@@ -7,7 +7,7 @@ import { RequestMiddleware } from './middleware/request.middleware';
 @Module({
   imports: [ConfigModule.forRoot()],
   controllers: [AppController],
-  providers: [AppService, Logger],
+  providers: [AppService, Logger, RequestMiddleware],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

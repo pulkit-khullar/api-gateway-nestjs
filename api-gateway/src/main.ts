@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ConsoleLogger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -10,6 +11,12 @@ async function bootstrap() {
       // json: true // Enables JSON logging in the application.
     }),
   });
-  await app.listen(process.env.PORT ?? 3000);
+
+  const configService = app.get(ConfigService);
+
+  /**
+   * Pick application port from ENV
+   */
+  await app.listen(configService.get<number>('PORT') ?? 3000);
 }
 bootstrap();
