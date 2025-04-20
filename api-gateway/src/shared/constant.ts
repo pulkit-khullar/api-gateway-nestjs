@@ -1,8 +1,8 @@
-import { RouteMapping } from "./interfaces";
+import { RouteMapping } from './interfaces';
 
 export const dynamicRoutesMapping: RouteMapping[] = [
-    {
-        routeName: '/auth',
-        routePath: 'http://localhost:8001'
-    }
-]
+  {
+    routeName: '/auth',
+    routePath: 'http://localhost:8001',
+  },
+];

@@ -3,13 +3,11 @@ import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AppService {
-    private readonly logger = new Logger(AppService.name);
-    constructor(private readonly configService: ConfigService) {}
+  private readonly logger = new Logger(AppService.name);
+  constructor(private readonly configService: ConfigService) {}
 
-    getHello(): string {
-        this.logger.log(
-            `Working logger? : ${this.configService.get('NODE_ENV')}`
-        );
-        return 'Hello World!';
-    }
+  getHello(): string {
+    this.logger.log(`Working logger? : ${this.configService.get('NODE_ENV')}`);
+    return 'Hello World!';
+  }
 }

@@ -5,12 +5,12 @@ import { ConfigModule } from '@nestjs/config';
 import { RequestMiddleware } from './middleware/request.middleware';
 
 @Module({
-    imports: [ConfigModule.forRoot()],
-    controllers: [AppController],
-    providers: [AppService, Logger],
+  imports: [ConfigModule.forRoot()],
+  controllers: [AppController],
+  providers: [AppService, Logger],
 })
-export class AppModule implements NestModule{
-    configure(consumer: MiddlewareConsumer) {
-        consumer.apply(RequestMiddleware).forRoutes('*')
-    }
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(RequestMiddleware).forRoutes('*');
+  }
 }
